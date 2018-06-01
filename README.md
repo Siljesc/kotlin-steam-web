@@ -24,7 +24,7 @@ steamChat.listen(ChatMessageEvent::class.java).subscribe({
     }
 })
 
-val chatResponse = steamChat.sendMessage(76561198150836073, "Hello there")
+steamChat.sendMessage(76561198150836073, "Hello there")
     
 ```
 
