@@ -16,11 +16,11 @@ data class ChatTypingEvent(val sender: SteamID)
 
 class ChatLoginException(override val message: String) : Exception(message)
 
-class Chat(private val steamWeb: SteamWeb, private val pollTime: Long) {
+class SteamChat(private val steamWeb: SteamWeb, private val pollTime: Long) {
 
-    private var state: Int = ChatState.Offline
-    private val oAuthApiToken: String = getOAuthToken()
-    private var logonResponse: JSONObject? = logon()
+    var state: Int = ChatState.Offline
+    val oAuthApiToken: String = getOAuthToken()
+    var logonResponse: JSONObject? = logon()
     lateinit var friends: MutableMap<String, SteamID>
 
     private val publisher = PublishSubject.create<Any>()
