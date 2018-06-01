@@ -67,88 +67,10 @@ Returns a `SteamTradeURL`. Then you can use `getFull()` to get your whole trade 
 
 
 
+# Other Documentation
 
-# SteamChat
+The rest of the documentation is available in the [wiki](https://github.com/SunriseM/kotlin-steam-web/wiki) 
 
-## Parameters
-
-
-### steamWeb
-
-An SteamWeb instance.
-
-
-### pollTime
-
-Poll period time in milliseconds as Long.
-
-
-
-
-## Properties
-
-
-### state
-
-`ChatState` enum value.
-
-
-### oAuthApiToken
-
-Your acount oAuth API Token.
-
-
-
-
-## Methods
-
-
-### startPoll()
-
-Start polling for chat events. 
-
-
-### logOff()
-
-Log off from Chat. 
-
-
-### sendMessage(user, text)
-
-* user: Long. SteamID64 from Recipient Account.
-* text: String. Message to been sent.
-
-Returns response error message if we got it, if everything is right returs null.
-
-
-### listen(ChatEvent) 
-
-Listen to a suscribable Chat Event. Example
-
-```kotlin
-chat.listen(ChatMessageEvent::class.java).subscribe({
-    println("Message from ${it.sender.getSteamID64()}. ${it.message}")
-})
-```
-
-
-
-
-## chatEvents
-
-### ChatMessageEvent(sender, message)
-
-* sender: `SteamID`.
-* message: String.
-
-Fired when we receive a chat message.
-
-
-### ChatUpdatePersona(sender)
-
-* sender: `SteamID`.
-
-Fired when an user from friend list updates its persona state.
 
 
 
