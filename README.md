@@ -12,11 +12,11 @@ val SteamAccount = SteamWeb(username="", password="", sharedSecret="")
 Then you can pass it on any Component.
 
 ```kotlin
-val SteamChat = SteamChat(SteamAccount, polltime=5000)
+val steamChat = SteamChat(SteamAccount, polltime=5000)
 
-chat.startPoll()
+steamChat.startPoll()
 
-chat.listen(ChatMessageEvent::class.java).subscribe({
+steamChat.listen(ChatMessageEvent::class.java).subscribe({
     println("Message from ${it.sender.getSteamID64()}. Text: ${it.message}")
 
     if (it.message == "Ping") {
@@ -24,7 +24,7 @@ chat.listen(ChatMessageEvent::class.java).subscribe({
     }
 })
 
-val chatResponse = chat.sendMessage(76561198150836073, "Hello there")
+val chatResponse = steamChat.sendMessage(76561198150836073, "Hello there")
     
 ```
 
