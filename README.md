@@ -31,8 +31,6 @@ steamChat.sendMessage(76561198150836073, "Hello there")
 # SteamWeb
 
 
-
-
 ## Properties
 
 
@@ -49,8 +47,6 @@ KHttp Cookie Jar with your login request cookies.
 ### apiKey
 
 Your account API Key from https://steamcommunity.com/dev/apikey.
-
-
 
 
 ## Methods
@@ -70,6 +66,15 @@ Returns a `SteamTradeURL`. Then you can use `getFull()` to get your whole trade 
 # Other Documentation
 
 The rest of the documentation is available in the [wiki](https://github.com/SunriseM/kotlin-steam-web/wiki) 
+
+
+# Acknowledgement
+
+Special thanks to these projects that made some things easier.
+
+* https://github.com/DoctorMcKay/node-steamcommunity
+* https://github.com/Denhart/java-steam-totp
+
 
 
 
