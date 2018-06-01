@@ -72,8 +72,8 @@ The rest of the documentation is available in the [wiki](https://github.com/Sunr
 
 Special thanks to these projects that made some things easier.
 
-* (node-steamcommunity)[https://github.com/DoctorMcKay/node-steamcommunity]
-* (java-steam-totp)[https://github.com/Denhart/java-steam-totp]
+* [node-steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)
+* [java-steam-totp](https://github.com/Denhart/java-steam-totp)
 
 
 
