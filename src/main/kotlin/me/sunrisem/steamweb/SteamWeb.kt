@@ -27,7 +27,7 @@ class SteamWeb(username: String? = null, password: String? = null, sharedSecret:
     var cookies = CookieJar(login.transferLogin(loginResponse.jsonObject)[0])
     var apikey = getApiKey()
 
-    lateinit var steamid: String
+    val steamid: String = loginResponse.jsonObject.getJSONObject("transfer_paramaters").getString("steamid")
     val profileURL: String = "https://steamcommunity.com/id/me"
     val apiURL: String = "https://api.steampowered.com"
 
@@ -63,23 +63,4 @@ class SteamWeb(username: String? = null, password: String? = null, sharedSecret:
         return SteamTradeUrl(findValues)
     }
 
-}
-
-fun main(args: Array<String>) {
-
-    val steam = SteamWeb(null, null, null)
-    val chat = Chat(steam, 5000)
-
-    chat.startPoll()
-
-    chat.listen(ChatMessageEvent::class.java).subscribe({
-        println("Message from ${it.sender.getSteamID64()}. ${it.message}")
-
-        if (it.message == "!ping") {
-            chat.sendMessage(it.sender.getSteamID64(), "Pong")
-        }
-    })
-
-    val chatResponse = chat.sendMessage(76561198150836073, "Hello beep boop")
-    println(chatResponse)
 }
